@@ -1,0 +1,16 @@
+audio:
+  input_device: Microphone (PD100X Podcast Microphone)
+  output_device: Speakers (2- Realtek(R) Audio)
+  sample_rate: 48000
+  chunk_ms: 20
+  buffer_chunks: 10
+model:
+  name: spex_plus
+  checkpoint_path: models/spex_plus/checkpoint.pt
+  device: cuda:0
+profiles:
+  active_profile: default
+  profiles_dir: profiles
+logging:
+  level: INFO
+  dir: logs

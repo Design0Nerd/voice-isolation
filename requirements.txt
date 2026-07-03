@@ -1,0 +1,36 @@
+# --- Audio I/O ---
+sounddevice==0.4.7
+soundfile==0.12.1
+numpy==1.26.4
+scipy==1.13.1
+
+# --- AI / model ---
+# torch and torchaudio are installed separately (see README) so we can pin
+# the CUDA-enabled build for your RTX 4070 Super instead of the CPU-only
+# wheel that plain `pip install torch` gives you on Windows.
+# torch==2.4.1+cu121
+# torchaudio==2.4.1+cu121
+
+# Phase 4: speech separation (2-speaker) -- weights auto-fetched from
+# HuggingFace on first run, then cached locally (no runtime cloud calls).
+clearvoice==0.1.2
+
+# Phase 4: speaker verification / embeddings (ECAPA-TDNN) -- same deal,
+# weights cached locally from HuggingFace on first run.
+speechbrain==1.0.2
+
+# Pinned: huggingface_hub v1.0+ removed the `use_auth_token` argument that
+# speechbrain==1.0.2 still passes internally, causing a TypeError on model
+# download. Keep below 1.0 until speechbrain ships a fix.
+huggingface_hub<1.0,>=0.24.0
+
+# --- GUI (Phase 8, not needed yet) ---
+# PySide6==6.7.2
+
+# --- Utilities ---
+PyYAML==6.0.2
+psutil==6.0.0
+loguru==0.7.2
+
+# --- Packaging (Phase 10, not needed yet) ---
+# pyinstaller==6.10.0
